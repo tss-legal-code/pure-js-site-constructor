@@ -2,43 +2,23 @@
  * Created by nitro on 04.08.2021.
  */
 
+import {row, col, css} from "./utils"
+
 function title(block){
-	return `
-		<div class="row">
-			<div class="col-sm">
-				<h1>${block.value}</h1>
-			</div>
-		</div>
-		`
+	const {tag = "h1", styles} = block.options;
+	return row(col(`<${tag}>${block.value}</${tag}>`), css(styles));
 }
 
 function text(block){
-	return `
-		<div class="row">
-			<div class="col-sm">
-				<p>${block.value}</p>
-			</div>
-		</div>
-		`
+	return row(col(`<p>${block.value}</p>`));
 }
 
 function columns(block){
-
-	const html = block.value.map( item => `<div class="col-sm">${item}</div>`);
-
-	return `
-		<div class="row">
-            ${html.join("")}
-        </div>
-		`
+	return row(block.value.map(col).join(""))
 }
 
 function image(block){
-	return `
-		<div class="row">
-			<img src="${block.value}"  alt="${block.value}" />
-		</div>
-		`
+	return row (`<img src="${block.value}"  alt="${block.value}" />`)
 }
 
 export const templates = {
