@@ -1,3 +1,6 @@
+body {
+    background-color: aquamarine;
+}
 #app {
     position: relative;
 }
@@ -17,6 +20,6 @@
     width: 200px;
     z-index: 100;
     padding: 10px;
-    box-shadow: inset -1px 0 0 rbga(0, 0, 0, .1);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
     overflow-y: auto;
 }
