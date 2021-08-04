@@ -11,10 +11,15 @@ export function col(content, styles = "") {
 }
 
 export function css(styles={}){
-	const keys = Object.keys(styles);
-	const array = keys.map(key => {
-		return `${key} : ${styles[key]}`
-	});
-	console.log(array);
-	return array.join(';')
+	// more declarative way
+	// const keys = Object.keys(styles);
+	// const array = keys.map(key => {
+	// 	return `${key} : ${styles[key]}`
+	// });
+	// console.log(array);
+	// return array.join(';')
+
+	//more compact way
+	const toString = key => `${key} : ${styles[key]}`;
+	return Object.keys(styles).map(toString).join(";")
 }
