@@ -18,7 +18,6 @@ function columns(block){
 }
 
 function image(block){
-	console.log(block.options);
 	const {imageStyles: is, alt ="", styles} = block.options;
 	return row (`<img src="${block.value}"  alt="${alt}" style="${css(is)}" />`, css(styles))
 }
