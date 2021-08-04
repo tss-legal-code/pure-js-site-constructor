@@ -3,10 +3,10 @@
  */
 import {model} from "./model"
 import "./styles/main.css"
-import {Site} from "./classes/site"
+import {App} from "./classes/app"
 
-const site = new Site("#site");
+new App(model).init();
 
 
-site.render(model);
+
 
